@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  //https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  half elve twins who look young (mid 20's) prometheus and chrysantimum (proto & chrssy) (first born/eldest kids)
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script>
+    let sheetID = "12_dJnsOuHlmp3ka23myvw27DgvEP4yDExeH-96SOM0o";
+    let apiKey = "AIzaSyBHAIpwJzNSZhb7KJEOjXO_SntEt0t2ZIY";
+    let endpoint = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json-in-script&callback=x`;
+  </script>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <script>
+    fetch(endpoint)
+            .then(response => response.json())
+            .then(data => console.log(data));
+  </script>
+
+</body>
+
+</html>

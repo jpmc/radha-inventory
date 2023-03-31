@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style>
+        #inventory-container {
+            border: 1px solid black;
+        }
+        #inventory-grid {
+            display: grid;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            grid-template-columns: repeat(auto-fit, 40px);
+        }
+        .inventory-item {
+            border: 1px dotted green;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+    <script src="./inventory.js">
+        // Defines `const inventory = [{array}, {of}, {items}]
+    </script>
+    <script type="text/javascript">
+        //console.log(inventory)
+
+        function filler() {
+            const tpl_item = document.querySelector('.inventory-item');
+            const grid = document.getElementById("inventory-grid");
+            for (let i = 0; i < 50; i++) {
+                grid.appendChild(tpl_item.cloneNode(true))
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            filler();
+        });
+    </script>
+</head>
+<body>
+<div id="main-container">
+    <div id="controls">
+        <fieldset>
+            <legend>Filter By:</legend>
+            <!-- "All" (No filter? Show all?) -->
+            <label><input type="radio" name="location" value="tavern" />Tavern</label>
+            <label><input type="radio" name="location" value="toolbelt" />Toolbelt</label>
+            <label><input type="radio" name="location" value="baghold" />Bag of Holding</label>
+            <label><input type="radio" name="location" value="fridge" />FridgePack™</label>
+            <label><input type="radio" name="location" value="onhand" />Currently On-hand</label>
+            <label><input type="radio" name="location" value="other" />Other</label>
+            <!-- Gemstones only filter-->
+        </fieldset>
+        <fieldset>
+            <legend>Sort By:</legend>
+            <label><input type="radio" name="sortby" value="gp" />Value (GP)</label>
+            <label><input type="radio" name="sortby" value="name" />Name (A-Z)</label>
+            <label><input type="radio" name="sortby" value="qty" />Quantity (Most-Least)</label>
+            <label><input type="radio" name="sortby" value="store" />Storage</label>
+        </fieldset>
+    </div>
+
+    <!--
+        NEW IDEA 2023:
+        - Grid inventory left
+        - Radha on the right sidebar
+        - placeholder sprite
+        - tooltip for info
+        - modal for clicking to see more info? Maybe replace Radha in the sidebar when selected?
+        - How to split "same items" stored in multiple locations
+    -->
+
+    <div id="inventory-container">
+        <!-- Inventory grid. Easy square-blocks flexbox. -->
+        <!-- "Click for info" can come later. Idea: Make new flex element that takes an entire row inserted immediately after the item selected. -->
+        <div id="inventory-grid">
+            <!-- Store the inventory data somewhere easy, dynamically add in. Or statically generate this section in full.  -->
+            <div class="inventory-item"><img src="assets1/scroll1.png" alt="" title="" etcetc/></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
